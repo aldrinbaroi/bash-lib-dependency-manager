@@ -11,10 +11,10 @@ __getFileFromGitRepo()
     local fileName=${4}
     local saveDirectory=${5}
     local resourceUrl="https://raw.githubusercontent.com/${repoOwner}/${repoName}/${releaseTag}/${fileName}"
-    curl -s -o "${saveDirectory}/${fileName}" "${resourceUrl}" 
+    curl -f -s -o "${saveDirectory}/${fileName}" "${resourceUrl}" 
     if (( $? )); then
         echo "Failed to get [${fileName}] file from the repository."
-        exit 1
+        return 1
     fi
 }
 
