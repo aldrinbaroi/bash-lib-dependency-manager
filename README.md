@@ -2,6 +2,7 @@
 Bash lib dependency manager to retrieve bash files from Github repo
 
 **Usage:**
+
 Create a file _dependencies.list_ and add dependencies on separate lines with following format:
 ```
 repoOwner,repoName,releaseTag,fileName
