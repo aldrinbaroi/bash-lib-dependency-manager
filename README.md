@@ -9,7 +9,7 @@ repoOwner,repoName,releaseTag,fileName
 ```
 Example:
 ```
-aldrinbaroi,bash-lib-logging,0.1,bash-lib-logging,lib
+aldrinbaroi,bash-lib-logging,0.1,bash-lib-logging
 ```
 
 In the bash script, add the following line:
