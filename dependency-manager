@@ -27,6 +27,7 @@ __loadDependencies()
     local saveDirectory="lib"
     local dependencyRec
     while IFS= read line || [ -n "${line}" ]; do
+	! [[ "${line}" =~ ^([[:print:]]+,){3}[[:print:]]+$ ]] && continue
         dependencyRec=(${line//,/ })
         repoOwner=${dependencyRec[0]}
         repoName=${dependencyRec[1]}
@@ -41,7 +42,7 @@ __loadDependencies()
             fi
         fi
         source "lib/${fileName}"
-    done < dependencies.list  
+    done < lib/dependencies.list
     if (( $? )); then
         echo "Error loading dependencies"
         exit 1
